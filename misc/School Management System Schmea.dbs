@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="School Management System" id="Project_3ed5c6" template="Default" database="MySql" >
+	<schema name="school management system" schemaname="school management system" >
+		<table name="area" >
+			<column name="country_id" type="char" length="36" jt="1" />
+			<column name="state_id" type="char" length="36" jt="1" />
+			<column name="city_id" type="char" length="36" jt="1" />
+			<column name="area_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="50" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_area_area_id" unique="PRIMARY_KEY" >
+				<column name="area_id" />
+			</index>
+		</table>
+		<table name="attendance" >
+			<column name="attendance_id" type="char" length="38" jt="1" mandatory="y" />
+			<column name="user_id" type="char" length="36" jt="1" />
+			<column name="time_in" type="datetime" jt="93" />
+			<column name="time_out" type="datetime" jt="93" />
+			<column name="short_leave" type="datetime" jt="93" />
+			<column name="grace_time" type="datetime" jt="93" />
+			<column name="absent_after" type="datetime" jt="93" />
+			<column name="break_start" type="datetime" jt="93" />
+			<column name="break_end" type="datetime" jt="93" />
+			<column name="addby" type="char" length="38" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="38" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_attendance_attendance_id" unique="PRIMARY_KEY" >
+				<column name="attendance_id" />
+			</index>
+		</table>
+		<table name="branch" >
+			<column name="organization_id" type="char" length="36" jt="1" />
+			<column name="branch_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_branch_branch_id" unique="PRIMARY_KEY" >
+				<column name="branch_id" />
+			</index>
+		</table>
+		<table name="city" >
+			<column name="country_id" type="char" length="36" jt="1" />
+			<column name="state_id" type="char" length="36" jt="1" />
+			<column name="city_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_city_city_id" unique="PRIMARY_KEY" >
+				<column name="city_id" />
+			</index>
+		</table>
+		<table name="class" >
+			<column name="class_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="50" jt="12" />
+			<column name="shortname" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_class_class_id" unique="PRIMARY_KEY" >
+				<column name="class_id" />
+			</index>
+		</table>
+		<table name="country" >
+			<column name="country_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="20" jt="12" />
+			<column name="country_code" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="50" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_country_country_id" unique="PRIMARY_KEY" >
+				<column name="country_id" />
+			</index>
+		</table>
+		<table name="exam" >
+			<column name="exam_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="user_id" type="char" length="36" jt="1" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="short_title" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_exam_exam_id" unique="PRIMARY_KEY" >
+				<column name="exam_id" />
+			</index>
+		</table>
+		<table name="exam_assign_class" >
+			<column name="exam_assign_class_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="class_id" type="char" length="38" jt="1" />
+			<column name="section_id" type="char" length="36" jt="1" />
+			<column name="exam_id" type="char" length="36" jt="1" />
+			<column name="user_id" type="char" length="36" jt="1" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_exam_assign_class_exam_assign_class_id" unique="PRIMARY_KEY" >
+				<column name="exam_assign_class_id" />
+			</index>
+		</table>
+		<table name="fee" >
+			<column name="fee_id" type="char" length="38" jt="1" mandatory="y" />
+			<column name="student_id" type="char" length="36" jt="1" />
+			<column name="fee_amount" type="int" jt="4" />
+			<column name="other" type="int" jt="4" />
+			<column name="discount" type="int" jt="4" />
+			<column name="payed_amount" type="int" jt="4" />
+			<column name="dues" type="int" jt="4" />
+			<column name="fee_gen_id" type="char" length="36" jt="1" />
+			<column name="payed_date" type="date" jt="91" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_fee_fee_id" unique="PRIMARY_KEY" >
+				<column name="fee_id" />
+			</index>
+		</table>
+		<table name="fee_head" >
+			<column name="fee_head_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="short_title" type="varchar" length="20" jt="12" />
+			<column name="amount" type="int" jt="4" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="class_id" type="char" length="36" jt="1" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_fee_head_fee_head_id" unique="PRIMARY_KEY" >
+				<column name="fee_head_id" />
+			</index>
+		</table>
+		<table name="fee_head_assign" >
+			<column name="fee_head_assign_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="fee_head_id" type="char" length="36" jt="1" />
+			<column name="user_id" type="char" length="36" jt="1" />
+			<column name="class_id" type="char" length="36" jt="1" />
+			<column name="section_id" type="char" length="36" jt="1" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_fee_head_assign_fee_head_assign_id" unique="PRIMARY_KEY" >
+				<column name="fee_head_assign_id" />
+			</index>
+		</table>
+		<table name="organization" >
+			<column name="organization_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" length="20" jt="-6" />
+			<index name="pk_organization_organization_id" unique="PRIMARY_KEY" >
+				<column name="organization_id" />
+			</index>
+		</table>
+		<table name="result" >
+			<column name="result_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="exam_assign_id" type="char" length="36" jt="1" />
+			<column name="marks" type="int" jt="4" />
+			<column name="total_marks" type="int" jt="4" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_result_result_id" unique="PRIMARY_KEY" >
+				<column name="result_id" />
+			</index>
+		</table>
+		<table name="section" >
+			<column name="class_id" type="char" length="36" jt="1" />
+			<column name="section_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_section_section_id" unique="PRIMARY_KEY" >
+				<column name="section_id" />
+			</index>
+		</table>
+		<table name="state" >
+			<column name="country_id" type="char" length="36" jt="1" />
+			<column name="state_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="shortname" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="38" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_state_state_id" unique="PRIMARY_KEY" >
+				<column name="state_id" />
+			</index>
+		</table>
+		<table name="subject" >
+			<column name="subject_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="short_title" type="varchar" length="20" jt="12" />
+			<column name="description" type="varchar" length="200" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_subject_subject_id" unique="PRIMARY_KEY" >
+				<column name="subject_id" />
+			</index>
+		</table>
+		<table name="subject_assign_class" >
+			<column name="subject_assign_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="class_id" type="char" length="36" jt="1" />
+			<column name="section_id" type="char" length="36" jt="1" />
+			<column name="user_id" type="char" length="36" jt="1" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_subject_assign_class_subject_assign_id" unique="PRIMARY_KEY" >
+				<column name="subject_assign_id" />
+			</index>
+		</table>
+		<table name="table" />
+		<table name="table_0" />
+		<table name="table_1" />
+		<table name="user_education" >
+			<column name="user_id" type="char" length="36" jt="1" />
+			<column name="user_education_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="degree_title" type="varchar" length="100" jt="12" />
+			<column name="institute" type="varchar" length="100" jt="12" />
+			<column name="date_of_passing" type="date" jt="91" />
+			<column name="obtain_marks" type="varchar" length="100" jt="12" />
+			<column name="total_marks" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="image" type="longblob" jt="-4" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_user_education_user_education_id" unique="PRIMARY_KEY" >
+				<column name="user_education_id" />
+			</index>
+		</table>
+		<table name="user_experience" >
+			<column name="user_id" type="char" length="36" jt="1" />
+			<column name="user_experience_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="50" jt="12" />
+			<column name="company_name" type="varchar" length="100" jt="12" />
+			<column name="reason_of_leave" type="varchar" length="200" jt="12" />
+			<column name="salary" type="varchar" length="50" jt="12" />
+			<column name="addby" type="varchar" length="100" jt="12" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="varchar" length="100" jt="12" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="100" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<column name="start_date" type="date" jt="91" />
+			<column name="end_date" type="date" jt="91" />
+			<index name="pk_user_experience_user_experience_id" unique="PRIMARY_KEY" >
+				<column name="user_experience_id" />
+			</index>
+		</table>
+		<table name="user_expertise" >
+			<column name="user_id" type="char" length="36" jt="1" />
+			<column name="user_expertise_id" type="char" length="36" jt="1" mandatory="y" />
+			<column name="title" type="varchar" length="100" jt="12" />
+			<column name="description" type="varchar" length="100" jt="12" />
+			<column name="experties_level" type="varchar" length="100" jt="12" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="50" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<index name="pk_user_expertise_user_expertise_id" unique="PRIMARY_KEY" >
+				<column name="user_expertise_id" />
+			</index>
+		</table>
+		<table name="user_personal_information" >
+			<column name="user_id" type="char" length="38" jt="1" mandatory="y" />
+			<column name="first_name" type="varchar" length="100" jt="12" />
+			<column name="last_name" type="varchar" length="100" jt="12" />
+			<column name="user_name" type="varchar" length="100" jt="12" />
+			<column name="cnic" type="varchar" length="20" jt="12" />
+			<column name="email" type="varchar" length="100" jt="12" />
+			<column name="father_name" type="varchar" length="100" jt="12" />
+			<column name="phone_no_1" type="varchar" length="20" jt="12" />
+			<column name="phone_no_2" type="varchar" length="20" jt="12" />
+			<column name="address_1" type="varchar" length="20" jt="12" />
+			<column name="address_2" type="varchar" length="100" jt="12" />
+			<column name="organization_id" type="char" length="36" jt="1" />
+			<column name="branch_id" type="char" length="36" jt="1" />
+			<column name="account_id" type="char" length="36" jt="1" />
+			<column name="password" type="varchar" length="20" jt="12" />
+			<column name="country_id" type="char" length="36" jt="1" />
+			<column name="state_id" type="char" length="36" jt="1" />
+			<column name="city_id" type="char" length="36" jt="1" />
+			<column name="area_id" type="char" length="36" jt="1" />
+			<column name="dob" type="datetime" jt="93" />
+			<column name="addby" type="char" length="36" jt="1" />
+			<column name="adddate" type="date" jt="91" />
+			<column name="editby" type="char" length="36" jt="1" />
+			<column name="editdate" type="date" jt="91" />
+			<column name="status" type="varchar" length="20" jt="12" />
+			<column name="flag" type="tinyint" jt="-6" />
+			<column name="image" type="longblob" jt="-4" />
+			<index name="pk_user_personal_information_user_id" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+			</index>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout_3777d34" show_relation="columns" >
+		<entity schema="school management system" name="user_education" color="C1D8EE" x="224" y="48" />
+		<entity schema="school management system" name="user_expertise" color="C1D8EE" x="528" y="48" />
+		<entity schema="school management system" name="city" color="C1D8EE" x="1040" y="64" />
+		<entity schema="school management system" name="area" color="C1D8EE" x="1152" y="64" />
+		<entity schema="school management system" name="country" color="C1D8EE" x="784" y="64" />
+		<entity schema="school management system" name="state" color="C1D8EE" x="912" y="64" />
+		<entity schema="school management system" name="branch" color="C1D8EE" x="1488" y="64" />
+		<entity schema="school management system" name="organization" color="C1D8EE" x="1344" y="64" />
+		<entity schema="school management system" name="fee_head" color="C1D8EE" x="48" y="576" />
+		<entity schema="school management system" name="user_personal_information" color="C1D8EE" x="64" y="48" />
+		<entity schema="school management system" name="fee_head_assign" color="C1D8EE" x="192" y="576" />
+		<entity schema="school management system" name="class" color="C1D8EE" x="1232" y="560" />
+		<entity schema="school management system" name="section" color="C1D8EE" x="1344" y="560" />
+		<entity schema="school management system" name="subject" color="C1D8EE" x="1456" y="560" />
+		<entity schema="school management system" name="subject_assign_class" color="C1D8EE" x="1568" y="544" />
+		<entity schema="school management system" name="exam" color="C1D8EE" x="1232" y="832" />
+		<entity schema="school management system" name="attendance" color="C1D8EE" x="816" y="528" />
+		<entity schema="school management system" name="exam_assign_class" color="C1D8EE" x="1392" y="832" />
+		<entity schema="school management system" name="result" color="C1D8EE" x="1568" y="832" />
+		<entity schema="school management system" name="fee" color="C1D8EE" x="352" y="560" />
+		<entity schema="school management system" name="user_experience" color="C1D8EE" x="368" y="48" />
+	</layout>
+</project>
